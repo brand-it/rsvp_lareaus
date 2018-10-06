@@ -50,6 +50,7 @@ jobs:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle clean
 
       - run:
           name: Installing Yarn
@@ -63,7 +64,7 @@ jobs:
 
       - save_cache:
           paths:
-            - ./venv
+            - vender/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       - run:
