@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class WeddingsController < ApplicationController
-
   def show; end
 
   def new; end
