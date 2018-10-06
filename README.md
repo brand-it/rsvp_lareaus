@@ -1,24 +1,5 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Work In Progress
+[![Maintainability](https://api.codeclimate.com/v1/badges/66a27a1710f384ca07ea/maintainability)](https://codeclimate.com/github/newdark/rsvp_lareaus/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/66a27a1710f384ca07ea/test_coverage)](https://codeclimate.com/github/newdark/rsvp_lareaus/test_coverage)
+[![CircleCI](https://circleci.com/gh/newdark/rsvp_lareaus.svg?style=svg)](https://circleci.com/gh/newdark/rsvp_lareaus)
