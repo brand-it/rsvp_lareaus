@@ -20,5 +20,11 @@ module RsvpLareaus
 
     config.logger = Logger.new(config.paths['log'].first)
     config.logger.formatter = Beautiful::Log::Formatter.new
+
+    config.generators do |generator|
+      generator.template_engine :slim
+      generator.stylesheets = false
+      generator.javascripts = false
+    end
   end
 end

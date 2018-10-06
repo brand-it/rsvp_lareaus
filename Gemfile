@@ -39,6 +39,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'beautiful-log'
+gem 'bootstrap', '~> 4.1.3'
+gem 'gravatar_image_tag'
+gem 'react-rails'
+gem 'responders'
+gem 'slim'
+gem 'webpacker'
 
 group :development, :test do
   # Call 'byebug' anywheb in the code to stop execution and get a debugger console
@@ -51,7 +57,10 @@ group :development, :test do
   gem 'scss_lint', require: false
 
   gem 'simplecov'
+  gem 'slim-rails'
   gem 'solargraph'
+
+  gem 'factory_bot_rails'
 end
 
 group :development do
