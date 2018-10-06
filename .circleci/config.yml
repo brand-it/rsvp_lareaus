@@ -8,16 +8,16 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/ruby:2.5.1-node-browsers
-  environment:
-    PGHOST: 127.0.0.1
-    PGUSER: loot_user
-    RAILS_ENV: test
-    NODE_ENV: test
-#     - image: circleci/postgres:9.5-alpine
-#       environment:
-#         POSTGRES_USER: loot_user
-#         POSTGRES_DB: loot_test
-#         POSTGRES_PASSWORD: ""
+      environment:
+        RAILS_ENV: test
+        NODE_ENV: test
+        DB_HOST: 127.0.0.1
+        DB_USERNAME: postgres
+
+    - image: circleci/postgres:9.6.2-alpine
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_DB: rsvp_lareaus_test
 jobs:
   setup:
     <<: *defaults
@@ -50,12 +50,16 @@ jobs:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle clean
 
       - run:
           name: Installing Yarn
           command: |
             yarn install
-
+      - run:
+          name: Create Database
+          command: |
+            bundle exec rake db:create
       - run:
           name: Precomple Webpack Stuff
           command: |
@@ -63,7 +67,7 @@ jobs:
 
       - save_cache:
           paths:
-            - ./venv
+            - vender/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       - run:
