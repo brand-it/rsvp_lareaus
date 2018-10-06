@@ -1,0 +1,28 @@
+plugins:
+  rubocop:
+    enabled: true
+    channel: rubocop-0-58
+  bundler-audit:
+    enabled: true
+  brakeman:
+    enabled: true
+  scss-lint:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  fixme:
+    enabled: true
+exclude_patterns:
+  - "**.bmp"
+  - "**.gif"
+  - "**.ico"
+  - "**.jpeg"
+  - "**.jpg"
+  - "**.png"
+  - "**.svg"
+  - "db/schema.rb"
+  - "**.slim"
+  - "**.coffee"
+version: "2"

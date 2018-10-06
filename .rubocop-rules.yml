@@ -1,0 +1,58 @@
+Metrics/LineLength:
+  Max: 125
+
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Reference: 'http://c2.com/cgi/wiki?AbcMetric'
+  Enabled: true
+  Max: 16.12
+  Exclude:
+    - 'db/data/*'
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 18 lines of code.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
+  Enabled: true
+  Max: 18
+  Exclude:
+    - 'db/data/*'
+
+Lint/AssignmentInCondition:
+  Description: "Don't use assignment in conditions."
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#safe-assignment-in-condition'
+  Enabled: true
+
+Lint/DuplicatedKey:
+  Description: 'Check for duplicate keys in hash literals.'
+  Enabled: true
+
+Metrics/ClassLength:
+  Max: 101
+
+# Disabled and Exclude Rules
+Documentation:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb
+    - config/routes.rb
+    - Gemfile
+
+Style/NumericPredicate:
+  Exclude:
+    - db/data/*
+
+Style/ZeroLengthPredicate:
+  Exclude:
+    - db/data/*
+
+Metrics/AbcSize:
+  Exclude:
+    - db/data/*
+    - app/controllers/concerns/pagination_helper.rb

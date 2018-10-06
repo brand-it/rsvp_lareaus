@@ -1,0 +1,10 @@
+/ = form_for @wedding do |f|
+/   -if @wedding.errors.any?
+/     #error_explanation
+/       h2 = "#{pluralize(@wedding.errors.count, "error")} prohibited this wedding from being saved:"
+/       ul
+/         - @wedding.errors.full_messages.each do |msg|
+/           li= msg
+
+/   .actions
+/     = f.submit 'Save'
