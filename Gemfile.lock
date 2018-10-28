@@ -282,6 +282,7 @@ DEPENDENCIES
   bootstrap (~> 4.1.3)
   byebug
   coffee-rails (~> 4.2)
+  colorize (~> 0.8.1)
   factory_bot_rails
   gravatar_image_tag
   jbuilder (~> 2.5)
