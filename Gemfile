@@ -45,6 +45,7 @@ gem 'gravatar_image_tag'
 gem 'react-rails'
 gem 'responders'
 gem 'slim'
+gem 'timber', '~> 2.3'
 gem 'webpacker'
 
 group :development, :test do
@@ -61,7 +62,9 @@ group :development, :test do
   gem 'slim-rails'
   gem 'solargraph'
 
+  gem 'debase'
   gem 'factory_bot_rails'
+  gem 'ruby-debug-ide'
 end
 
 group :development do

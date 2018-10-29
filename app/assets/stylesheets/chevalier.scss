@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Chevalier';
+  src: asset-url('chevalier.eot');
+  src: asset-url('chevalier.eot?#iefix') format('embedded-opentype'),
+    asset-url('chevalier.woff') format('woff'),
+    asset-url('chevalier.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.chevalier {
+  font-family: 'Clevalier';
+}
