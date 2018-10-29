@@ -18,8 +18,6 @@ module RsvpLareaus
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.logger = Logger.new(config.paths['log'].first)
-    config.logger.formatter = Beautiful::Log::Formatter.new
     config.force_ssl = ENV.fetch('FORCE_SSL') { false } == 'true'
 
     config.generators do |generator|
