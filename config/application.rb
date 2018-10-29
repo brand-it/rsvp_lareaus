@@ -20,6 +20,7 @@ module RsvpLareaus
 
     config.logger = Logger.new(config.paths['log'].first)
     config.logger.formatter = Beautiful::Log::Formatter.new
+    config.force_ssl = ENV.fetch('FORCE_SSL') { false } == 'true'
 
     config.generators do |generator|
       generator.template_engine :slim
