@@ -1,0 +1,15 @@
+
+@font-face {
+  font-family: 'DKVermilion';
+  src: asset-url('DKVermilion.eot?#iefix') format('embedded-opentype'),
+    asset-url('DKVermilion.otf')  format('opentype'),
+    asset-url('DKVermilion.woff') format('woff'),
+    asset-url('DKVermilion.ttf')  format('truetype'),
+    asset-url('DKVermilion.svg#DKVermilion') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dkvermilion {
+  font-family: 'DKVermilion';
+}

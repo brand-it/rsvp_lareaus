@@ -3,7 +3,27 @@
 @import 'lazy_loading';
 @import 'chalkboard_bg';
 @import 'chevalier';
+@import 'dkvermilion';
+@import 'minimal_form';
 
 .max-height {
   height: 100%;
 }
+
+.extra-large-font {
+  font-size: 60px;
+}
+
+.large-font {
+  font-size: 43px;
+}
+
+.curve {
+  path {
+    fill: transparent;
+  }
+  text {
+    fill: $white;
+  }
+}
+
