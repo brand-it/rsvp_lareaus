@@ -3,94 +3,95 @@
     font-size: 32px;
   }
 }
+
 .minimal-input {
-  width: 100%;
-  position: relative;
-  border-bottom: 2px solid #adadad;
+  border-bottom: 2px solid $light-gray;
   margin-bottom: 37px;
+  position: relative;
+  width: 100%;
+
   input {
+    background-color: transparent;
+    border: 0;
+    color: $white;
     display: block;
-    width: 100%;
     font-family: DKVermilion;
     font-size: 32px;
-    color: $white;
+    height: 55px;
     line-height: 1.2;
     outline: none;
-    border: none;
-    height: 55px;
-    background-color: transparent;
+    width: 100%;
   }
 
   input:focus {
-    border-color: transparent !important;
+    border-color: transparent;
   }
 
   input + .input-placeholder::after {
-    top: 16px;
     left: 0;
+    top: 16px;
   }
 
   input:focus + .input-placeholder::after, input.has-val + .input-placeholder::after {
-    top: -26px;
     color: $gray;
+    top: -26px;
   }
+
   .input-placeholder {
-    position: absolute;
     display: block;
-    width: 100%;
     height: 100%;
-    top: 0;
     left: 0;
     pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
   input:focus + .input-placeholder::before {
     width: 100%;
   }
+
   .error-message {
-    display: block;
-    position: absolute;
-    right: 0px;
     color: $red;
-    top: 20px;
+    display: block;
     font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 20px;
   }
 
   .input-placeholder::before {
-    content: "";
+    background: $red;
+    background: -webkit-linear-gradient(45deg, $red, lighten($red, 20%));
+    background: -o-linear-gradient(45deg, $red, lighten($red, 20%));
+    background: -moz-linear-gradient(45deg, $red, lighten($red, 20%));
+    background: linear-gradient(45deg, $red, lighten($red, 20%));    bottom: -2px;
+    content: '';
     display: block;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
     height: 2px;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-    background: rgba(219,21,99,1);
-    background: -webkit-linear-gradient(45deg, #d5007d, #e53935);
-    background: -o-linear-gradient(45deg, #d5007d, #e53935);
-    background: -moz-linear-gradient(45deg, #d5007d, #e53935);
-    background: linear-gradient(45deg, #d5007d, #e53935);
+    left: 0;
+    position: absolute;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    width: 0;
   }
 
   .input-placeholder::after {
+    color: $white;
     content: attr(data-placeholder);
     display: block;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0;
     font-family: DKVermilion;
     font-size: 22px;
-    color: $white;
+    left: 0;
     line-height: 1.2;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
+    position: absolute;
+    top: 0;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    width: 100%;
   }
 }
-
-

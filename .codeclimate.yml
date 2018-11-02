@@ -25,4 +25,5 @@ exclude_patterns:
   - "db/schema.rb"
   - "**.slim"
   - "**.coffee"
+  - app/assets/stylesheets/pretty_checkbox.scss
 version: "2"
