@@ -1,13 +1,18 @@
 @font-face {
-  font-family: 'Chevalier';
-  src: asset-url('chevalier.eot');
-  src: asset-url('chevalier.eot?#iefix') format('embedded-opentype'),
-    asset-url('chevalier.woff') format('woff'),
-    asset-url('chevalier.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'ChevalierSCDOT-StripesRegular';
+  src: asset-url('ChevalierSCDOT-StripesRegular.eot?#iefix') format('embedded-opentype'),
+  asset-url('ChevalierSCDOT-StripesRegular.otf')  format('opentype'),
+  asset-url('ChevalierSCDOT-StripesRegular.woff') format('woff'),
+  asset-url('ChevalierSCDOT-StripesRegular.ttf')  format('truetype'),
+  asset-url('ChevalierSCDOT-StripesRegular.svg#ChevalierSCDOT-StripesRegular') format('svg');
   font-style: normal;
+  font-weight: normal;
 }
 
 .chevalier {
-  font-family: 'Clevalier';
+  font-family: 'ChevalierSCDOT-StripesRegular';
 }
+
+// text {
+//   fill: #ff9800;
+// }

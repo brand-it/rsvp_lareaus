@@ -1,0 +1,97 @@
+.minimal-checkbox-input {
+  .pretty {
+    font-size: 32px;
+  }
+}
+
+.minimal-input {
+  border-bottom: 2px solid $light-gray;
+  margin-bottom: 37px;
+  position: relative;
+  width: 100%;
+
+  input {
+    background-color: transparent;
+    border: 0;
+    color: $white;
+    display: block;
+    font-family: DKVermilion;
+    font-size: 32px;
+    height: 55px;
+    line-height: 1.2;
+    outline: none;
+    width: 100%;
+  }
+
+  input:focus {
+    border-color: transparent;
+  }
+
+  input + .input-placeholder::after {
+    left: 0;
+    top: 16px;
+  }
+
+  input:focus + .input-placeholder::after, input.has-val + .input-placeholder::after {
+    color: $gray;
+    top: -26px;
+  }
+
+  .input-placeholder {
+    display: block;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  input:focus + .input-placeholder::before {
+    width: 100%;
+  }
+
+  .error-message {
+    color: $red;
+    display: block;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+
+  .input-placeholder::before {
+    background: $red;
+    background: -webkit-linear-gradient(45deg, $red, lighten($red, 20%));
+    background: -o-linear-gradient(45deg, $red, lighten($red, 20%));
+    background: -moz-linear-gradient(45deg, $red, lighten($red, 20%));
+    background: linear-gradient(45deg, $red, lighten($red, 20%));    bottom: -2px;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    width: 0;
+  }
+
+  .input-placeholder::after {
+    color: $white;
+    content: attr(data-placeholder);
+    display: block;
+    font-family: DKVermilion;
+    font-size: 22px;
+    left: 0;
+    line-height: 1.2;
+    position: absolute;
+    top: 0;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    width: 100%;
+  }
+}

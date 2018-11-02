@@ -25,22 +25,21 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe WeddingsController, type: :controller do
+RSpec.describe RsvpGuestsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Wedding. As you add validations to Wedding, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
-  end
+  let(:valid_attributes) { build(:rsvp_guest).attributes }
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    { first_name: nil, last_name: nil }
   end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # WeddingsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  let(:rsvp_guest) { create :rsvp_guest }
 
   # describe 'GET #index' do
   #   it 'returns a success response' do
@@ -51,16 +50,16 @@ RSpec.describe WeddingsController, type: :controller do
   # end
 
   describe 'GET #show' do
-    subject { get :show }
+    subject { get :show, params: { id: rsvp_guest.id } }
     it { is_expected.to be_successful }
   end
 
-  # describe 'GET #new' do
-  #   it 'returns a success response' do
-  #     get :new, params: {}, session: valid_session
-  #     expect(response).to be_successful
-  #   end
-  # end
+  describe 'GET #new' do
+    subject { get :new }
+    it 'returns a success response' do
+      is_expected.to be_successful
+    end
+  end
 
   # describe 'GET #edit' do
   #   it 'returns a success response' do
@@ -70,27 +69,24 @@ RSpec.describe WeddingsController, type: :controller do
   #   end
   # end
 
-  # describe 'POST #create' do
-  #   context 'with valid params' do
-  #     it 'creates a new Wedding' do
-  #       expect do
-  #         post :create, params: { wedding: valid_attributes }, session: valid_session
-  #       end.to change(Wedding, :count).by(1)
-  #     end
+  describe 'POST #create' do
+    context 'with valid params' do
+      subject { post :create, params: { rsvp_guest: valid_attributes } }
+      it 'creates a new RsvpGuest' do
+        expect { subject }.to change(RsvpGuest, :count).by(1)
+      end
 
-  #     it 'redirects to the created wedding' do
-  #       post :create, params: { wedding: valid_attributes }, session: valid_session
-  #       expect(response).to redirect_to(Wedding.last)
-  #     end
-  #   end
+      it 'redirects to the created wedding' do
+        is_expected.to redirect_to(RsvpGuest.last)
+      end
+    end
 
-  #   context 'with invalid params' do
-  #     it "returns a success response (i.e. to display the 'new' template)" do
-  #       post :create, params: { wedding: invalid_attributes }, session: valid_session
-  #       expect(response).to be_successful
-  #     end
-  #   end
-  # end
+    context 'with invalid params' do
+      subject { post :create, params: { rsvp_guest: invalid_attributes } }
+      it { expect(subject.status).to eq 200 }
+      it { expect { subject }.to_not change(RsvpGuest, :count) }
+    end
+  end
 
   # describe 'PUT #update' do
   #   context 'with valid params' do
