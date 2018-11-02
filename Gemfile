@@ -64,6 +64,7 @@ group :development, :test do
 
   gem 'debase'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'ruby-debug-ide'
 end
 

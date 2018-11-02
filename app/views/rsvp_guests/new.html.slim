@@ -1,12 +1,12 @@
 
-div class='chalkboard-bg'
+.chalkboard-bg
   .container.pt-4
     .row
       .col-sm.text-right.d-none.d-md-block= image_tag 'leaf-left.png'
       .col-sm.text-center.mt-5
 
         h1.chevalier.text-white.extra-large-font S & B
-        h2.text-white.dkvermilion RSVP To Samanth & Brandt
+        h2.text-white.dkvermilion RSVP To Samantha & Brandt
       .col-sm.d-none.d-md-block= image_tag 'leaf-right.png'
 
     .row
@@ -25,15 +25,5 @@ div class='chalkboard-bg'
               textPath.curve.extra-large-font.chevalier.text-white xlink:href="#curve" WEDDING
 
       .col-sm.pt-5.d-none.d-sm-none.d-md-none.d-lg-block= image_tag 'right-fig.png'
-  .container.pt-4
-    .row
-      .col-sm
-        .minimal-input
-          input name="first_name" type="text"
-          span.input-placeholder data-placeholder="FIRST NAME"
-      .col-sm
-        .minimal-input
-          input name="last_name" type="text"
-          span.input-placeholder data-placeholder="LAST NAME"
 
-== render 'form'
+  == render 'form'

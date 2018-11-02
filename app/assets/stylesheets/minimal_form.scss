@@ -1,3 +1,8 @@
+.minimal-checkbox-input {
+  .pretty {
+    font-size: 32px;
+  }
+}
 .minimal-input {
   width: 100%;
   position: relative;
@@ -7,7 +12,7 @@
     display: block;
     width: 100%;
     font-family: DKVermilion;
-    font-size: 20px;
+    font-size: 32px;
     color: $white;
     line-height: 1.2;
     outline: none;
@@ -26,7 +31,7 @@
   }
 
   input:focus + .input-placeholder::after, input.has-val + .input-placeholder::after {
-    top: -13px;
+    top: -26px;
     color: $gray;
   }
   .input-placeholder {
@@ -41,6 +46,14 @@
 
   input:focus + .input-placeholder::before {
     width: 100%;
+  }
+  .error-message {
+    display: block;
+    position: absolute;
+    right: 0px;
+    color: $red;
+    top: 20px;
+    font-size: 20px;
   }
 
   .input-placeholder::before {

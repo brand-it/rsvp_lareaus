@@ -1,0 +1,43 @@
+
+.container.pt-4
+  = form_for @rsvp_guest do |f|
+    .row
+      .col-sm
+        .minimal-input
+          = minimal_form_errors(f.object, :first_name)
+          = f.text_field :first_name, required: true
+          span.input-placeholder data-placeholder="FIRST NAME"
+
+      .col-sm
+        .minimal-input
+          = minimal_form_errors(f.object, :last_name)
+          = f.text_field :last_name, required: true
+          span.input-placeholder data-placeholder="LAST NAME"
+    .row
+      .col-sm
+        .minimal-input
+          = minimal_form_errors(f.object, :email)
+          = f.text_field :email
+          span.input-placeholder data-placeholder="EMAIL"
+    .row
+      .col-sm
+        .minimal-input
+          = minimal_form_errors(f.object, :total_adults)
+          = f.number_field :total_adults, required: true
+          span.input-placeholder data-placeholder='Attending Adults'
+      .col-sm
+        .minimal-input
+          = minimal_form_errors(f.object, :total_children)
+          = f.number_field :total_children, required: true
+          span.input-placeholder data-placeholder='Attending Children'
+
+    .row
+      .col-sm
+        .minimal-checkbox-input
+          = minimal_form_errors(f.object, :attending)
+          .pretty.p-switch.p-fill
+            = f.check_box :attending
+            .state.p-success
+              label Attending
+    .actions.text-center
+      = f.submit 'RSVP', class: 'large-font btn btn-light'

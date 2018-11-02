@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'weddings/index', type: :view do
+RSpec.describe 'rsvp_guests/index', type: :view do
   # before(:each) do
   #   assign(:weddings, [
   #            Wedding.create!,
