@@ -1,15 +1,14 @@
-.chalkboard-bg
-  .container.pt-4
-    .row.text-center
-      .col-sm.text-right.d-none.d-md-block= image_tag 'leaf-left.png'
-      .col-sm.text-center.mt-5
-        h1.chevalier= @rsvp_guest.name
-        - if @rsvp_guest.attending
-          h2 Looking forward to seeing you at the wedding
-        - else
-          h2 Thanks for taking the time to RSVP
-      .col-sm.text-left.d-none.d-md-block= image_tag 'leaf-right.png'
+.container.pt-4
+  .row.text-center
+    .col-sm.text-right.d-none.d-md-block= image_tag 'leaf-left.png'
+    .col-sm.text-center.mt-5
+      h1.chevalier= @rsvp_guest.name
+      - if @rsvp_guest.attending
+        h2 Looking forward to seeing you at the wedding
+      - else
+        h2 Thanks for taking the time to RSVP
+    .col-sm.text-left.d-none.d-md-block= image_tag 'leaf-right.png'
 
-    .row.text-center
-      .col-sm
+  .row.text-center
+    .col-sm
 
