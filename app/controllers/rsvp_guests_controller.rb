@@ -9,18 +9,13 @@ class RsvpGuestsController < ApplicationController
     @rsvp_guest = RsvpGuest.new
   end
 
-  def edit; end
-
   def create
-    @rsvp_guest = RsvpGuest.new(rsvp_guest_params)
+    @rsvp_guest = RsvpGuest.find_by(rsvp_guest_params)
+    @rsvp_guest ||= RsvpGuest.new(rsvp_guest_params)
     @rsvp_guest.save
 
     respond_with @rsvp_guest
   end
-
-  def update; end
-
-  def destroy; end
 
   private
 

@@ -1,0 +1,31 @@
+.table-responsive
+  table.table.table-dark.table-striped
+    thead
+      tr
+        th scope="col" First Name
+        th scope="col" Last Name
+        th scope="col" Email
+        th scope="col" Attending
+        th.text-right scope="col" Total Adults
+        th.text-right scope="col" Total Children
+
+    tbody
+      - @rsvp_guests.each do |rsvp_guest|
+        tr class=("bg-success" if rsvp_guest.attending?)
+          td= rsvp_guest.first_name
+          td= rsvp_guest.last_name
+          td= rsvp_guest.email
+          td= rsvp_guest.attending? ? 'Yes' : 'No'
+          td.text-right= rsvp_guest.total_adults
+          td.text-right= rsvp_guest.total_children
+          td.text-right= link_to icon('trash'), [:admins, rsvp_guest], class: 'text-white delete-button'
+    tfooter
+      tr
+        td colspan='4'
+        td.text-right.total-adults-attending
+          => @rsvp_guests.map(&:total_adults_attending).inject(:+).to_i
+          | Attending
+        td.text-right
+          => @rsvp_guests.map(&:total_children_attending).inject(:+).to_i
+          | Attending
+        td
