@@ -1,0 +1,31 @@
+.content.container.pt-4
+  .row
+    .col-sm
+      h2 Log In
+
+.container.pt-4
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = devise_error_messages!
+    .row
+      .col-sm
+        .minimal-input
+          = minimal_form_errors(f.object, :email)
+          = f.email_field :email, autofocus: true, autocomplete: 'email'
+          span.input-placeholder data-placeholder="EMAIL"
+    .row
+      .col-sm
+        .minimal-input
+          = minimal_form_errors(f.object, :password)
+          = f.password_field :password, autocomplete: 'new-password'
+          span.input-placeholder data-placeholder="password"
+    .row
+      .col-sm
+        .minimal-checkbox-input
+          = minimal_form_errors(f.object, :remember_me)
+          .pretty.p-switch.p-fill
+            = f.check_box :remember_me
+            .state.p-success
+              label Remember Me
+    .actions.text-center
+      = f.submit "Sign up", class: 'large-font btn btn-light'
+  = render "admins/shared/links"

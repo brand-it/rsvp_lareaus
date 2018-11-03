@@ -1,9 +1,7 @@
-/ footer.footer.fixed-bottom.text-center
-/   .container
-/     a> href="https://www.linkedin.com/in/brandtlareau/"
-/       => icon 'linkedin', type: 'fab'
-/       | LinkedIn
-/     | -
-/     a href="https://github.com/newdark"
-/       =<> icon 'github', type: 'fab'
-/       | Github
+footer.footer.text-center
+  .container
+    - unless admin_signed_in?
+      = link_to new_admin_session_path do
+        => icon 'unlock-alt', type: 'fas'
+        | Admin Login
+

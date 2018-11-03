@@ -1,0 +1,15 @@
+- if admin_signed_in?
+  nav.navbar.navbar-expand-lg.navbar.navbar-dark.bg-dark
+    = link_to 'RSVP', root_path, class: 'navbar-brand'
+    button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    #navbarText.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          = link_to 'RSVP Guests', admins_rsvp_guests_path, class: 'nav-link'
+      ul.nav
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle.text-white data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+            = current_admin.email
+          .dropdown-menu
+            = link_to 'Sign Out', destroy_admin_session_path, class: 'dropdown-item', method: :delete
