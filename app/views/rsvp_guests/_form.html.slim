@@ -23,23 +23,22 @@
       .col-sm
         .minimal-input
           = minimal_form_errors(f.object, :total_adults)
-          = f.number_field :total_adults, required: true
+          = f.number_field :total_adults, required: true, pattern: '[0-9]*'
           span.input-placeholder data-placeholder='Attending Adults'
       .col-sm
         .minimal-input
           = minimal_form_errors(f.object, :total_children)
-          = f.number_field :total_children, required: true
+          = f.number_field :total_children, required: true, pattern: '[0-9]*'
           span.input-placeholder data-placeholder='Attending Children'
-
-    .row.pb-2
       .col-sm.text-center
+
         .minimal-checkbox-input
-          = minimal_form_errors(f.object, :attending)
-          .pretty.p-switch.p-fill
-            = f.check_box :attending
-            .state.p-success
-              label Attending
-    .row
+          = f.label :attending
+          =< minimal_form_errors(f.object, :attending)
+          = f.check_box :attending,  data: { 'off-text' => 'No', 'on-text' => 'Yes' }
+
+
+    .row.pt-5
       .col-sm
         .actions.text-center
           = f.submit 'RSVP', class: 'large-font btn btn-light'

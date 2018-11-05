@@ -12,4 +12,10 @@ document.addEventListener("turbolinks:load", function () {
       addHasValue(this);
     });
   })
+  $(".minimal-checkbox-input input[type='checkbox']").bootstrapSwitch('onColor', 'success');
+
+})
+
+document.addEventListener('turbolinks:before-cache', function () {
+  $(".minimal-checkbox-input input[type='checkbox']").bootstrapSwitch('destroy')
 })
