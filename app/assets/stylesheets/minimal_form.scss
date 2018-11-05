@@ -1,6 +1,26 @@
 .minimal-checkbox-input {
-  .pretty {
-    font-size: 32px;
+  label {
+    font-size: 28px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+  }
+
+  input[type='checkbox'] {
+    visibility: initial;
+  }
+  .bootstrap-switch {
+    font-family: "Lucida Console", Monaco, monospace;
+  }
+  .bootstrap-switch.bootstrap-switch-focused {
+    border-color: $red;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba($black, 0.075), 0 0 8px rgba($red, 0.6);
+  }
+
+  .bootstrap-switch .bootstrap-switch-handle-on,
+  .bootstrap-switch .bootstrap-switch-handle-off,
+  .bootstrap-switch .bootstrap-switch-label {
+    line-height: 30px;
   }
 }
 
@@ -65,7 +85,8 @@
     background: -webkit-linear-gradient(45deg, $red, lighten($red, 20%));
     background: -o-linear-gradient(45deg, $red, lighten($red, 20%));
     background: -moz-linear-gradient(45deg, $red, lighten($red, 20%));
-    background: linear-gradient(45deg, $red, lighten($red, 20%));    bottom: -2px;
+    background: linear-gradient(45deg, $red, lighten($red, 20%));
+    bottom: -2px;
     content: '';
     display: block;
     height: 2px;

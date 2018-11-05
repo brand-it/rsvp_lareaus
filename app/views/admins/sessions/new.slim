@@ -16,16 +16,17 @@
       .col-sm
         .minimal-input
           = minimal_form_errors(f.object, :password)
-          = f.password_field :password, autocomplete: 'new-password'
+          = f.password_field :password, autocomplete: 'password'
           span.input-placeholder data-placeholder="password"
     .row
       .col-sm
-        .minimal-checkbox-input
+        .minimal-checkbox-input.text-center
+          label> Remember Me
           = minimal_form_errors(f.object, :remember_me)
-          .pretty.p-switch.p-fill
-            = f.check_box :remember_me
-            .state.p-success
-              label Remember Me
-    .actions.text-center
-      = f.submit "Sign up", class: 'large-font btn btn-light'
+          = f.check_box :remember_me, data: { 'off-text' => 'No', 'on-text' => 'Yes'}
+
+    .row.pt-5
+      .col-sm
+        .actions.text-center
+          = f.submit "Log In", class: 'large-font btn btn-light'
   = render "admins/shared/links"

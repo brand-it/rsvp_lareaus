@@ -39,7 +39,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'beautiful-log'
-gem 'bootstrap', '~> 4.1.3'
 gem 'colorize', '~> 0.8.1'
 gem 'devise'
 gem 'gravatar_image_tag'

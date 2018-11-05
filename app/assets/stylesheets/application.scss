@@ -1,16 +1,13 @@
+@import 'bootstrap/dist/css/bootstrap';
+@import 'bootstrap-switch/dist/css/bootstrap3/bootstrap-switch';
 @import 'color_variables';
-@import 'bootstrap';
 @import 'lazy_loading';
 @import 'chalkboard_bg';
 @import 'chevalier';
 @import 'dkvermilion';
 @import 'minimal_form';
-@import 'pretty_checkbox';
 @import 'footer';
 
-.max-height {
-  height: 100%;
-}
 
 .extra-large-font {
   font-size: 60px;
@@ -18,6 +15,14 @@
 
 .large-font {
   font-size: 43px;
+}
+
+.h-5 {
+  height: 3rem !important;
+}
+
+.min-h-100 {
+  min-height: 100%;
 }
 
 .curve {
@@ -29,5 +34,4 @@
     fill: $white;
   }
 }
-
 
