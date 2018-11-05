@@ -8,16 +8,20 @@
 @import 'pretty_checkbox';
 @import 'footer';
 
-.max-height {
-  height: 100%;
-}
-
 .extra-large-font {
   font-size: 60px;
 }
 
 .large-font {
   font-size: 43px;
+}
+
+.h-5 {
+  height: 3rem !important;
+}
+
+.min-h-100 {
+  min-height: 100%;
 }
 
 .curve {
@@ -29,5 +33,4 @@
     fill: $white;
   }
 }
-
 

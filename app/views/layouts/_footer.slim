@@ -1,7 +1,8 @@
-footer.footer.text-center
-  .container
-    - unless admin_signed_in?
-      = link_to new_admin_session_path do
-        => icon 'unlock-alt', type: 'fas'
-        | Admin Login
-
+- unless admin_signed_in?
+  footer.footer.position-absolute.w-100.h-5
+    .container
+      .row
+        .col-sm.text-center
+          = link_to new_admin_session_path do
+            => icon 'unlock-alt', type: 'fas'
+            | Admin Login
