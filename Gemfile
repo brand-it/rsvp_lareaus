@@ -52,7 +52,7 @@ gem 'webpacker'
 
 group :development, :test do
   # Call 'byebug' anywheb in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'awesome_print'
   gem 'rspec-rails', '~> 3.8'

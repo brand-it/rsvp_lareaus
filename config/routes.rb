@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :rsvp_guests, only: %i[update edit destroy index]
   end
+
+  # Lowest of priority need to check this last
+  match '/:page_name' => 'application#pages', via: [:get]
 end
