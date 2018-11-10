@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     resources :rsvp_guests, only: %i[update edit destroy index]
+    resources :admins, only: %i[index update]
   end
 
   # Lowest of priority need to check this last

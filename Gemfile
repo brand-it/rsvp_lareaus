@@ -53,6 +53,8 @@ gem 'webpacker'
 gem 'wisper', '2.0.0'
 
 group :development, :test do
+  gem 'vcr'
+  gem 'webmock' # used by VCR
   # Call 'byebug' anywheb in the code to stop execution and get a debugger console
   gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver

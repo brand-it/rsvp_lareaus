@@ -26,6 +26,7 @@ class Admin < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  before_create :approved_if_only_admin
 
   def active_for_authentication?
     super && approved?
@@ -33,5 +34,11 @@ class Admin < ApplicationRecord
 
   def inactive_message
     approved? ? super : :not_approved
+  end
+
+  private
+
+  def approved_if_only_admin
+    self.approved = true if self.class.count.zero?
   end
 end
