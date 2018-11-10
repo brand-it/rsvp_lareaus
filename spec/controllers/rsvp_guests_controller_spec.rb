@@ -51,13 +51,15 @@ RSpec.describe RsvpGuestsController, type: :controller do
 
   describe 'GET #show' do
     subject { get :show, params: { id: rsvp_guest.id } }
+
     it { is_expected.to be_successful }
   end
 
   describe 'GET #new' do
-    subject { get :new }
+    subject(:get_new) { get :new }
+
     it 'returns a success response' do
-      is_expected.to be_successful
+      expect(get_new).to be_successful
     end
   end
 
@@ -71,20 +73,22 @@ RSpec.describe RsvpGuestsController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid params' do
-      subject { post :create, params: { rsvp_guest: valid_attributes } }
+      subject(:post_create) { post :create, params: { rsvp_guest: valid_attributes } }
+
       it 'creates a new RsvpGuest' do
-        expect { subject }.to change(RsvpGuest, :count).by(1)
+        expect { post_create }.to change(RsvpGuest, :count).by(1)
       end
 
       it 'redirects to the created wedding' do
-        is_expected.to redirect_to(RsvpGuest.last)
+        expect(post_create).to redirect_to(RsvpGuest.last)
       end
     end
 
     context 'with invalid params' do
-      subject { post :create, params: { rsvp_guest: invalid_attributes } }
-      it { expect(subject.status).to eq 200 }
-      it { expect { subject }.to_not change(RsvpGuest, :count) }
+      subject(:post_create) { post :create, params: { rsvp_guest: invalid_attributes } }
+
+      it { expect(post_create.status).to eq 200 }
+      it { expect { post_create }.not_to change(RsvpGuest, :count) }
     end
   end
 

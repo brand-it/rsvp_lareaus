@@ -12,7 +12,7 @@ RSpec.describe 'rsvp_guests/new', type: :view do
     assert_select 'form[action=?][method=?]', rsvp_guests_path, 'post'
   end
 
-  it 'all form inputs have a name' do
+  it 'all form inputs have a name' do # rubocop:disable RSpec/ExampleLength
     render
     assert_select 'form input' do
       assert_select '[name="rsvp_guest\[first_name\]"]'

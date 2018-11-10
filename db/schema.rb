@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_03_004243) do
+ActiveRecord::Schema.define(version: 2018_11_10_015713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2018_11_03_004243) do
     t.boolean "attending", default: false, null: false
     t.integer "total_adults", default: 1, null: false
     t.integer "total_children", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slack_messages", force: :cascade do |t|
+    t.string "channel"
+    t.text "text"
+    t.boolean "ok"
+    t.string "error_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'rsvp_guests/show', type: :view do
   let(:rsvp_guest) { create :rsvp_guest }
+
   before do
     assign(:rsvp_guest, rsvp_guest)
   end
@@ -13,7 +14,7 @@ RSpec.describe 'rsvp_guests/show', type: :view do
     expect(rendered).to include(rsvp_guest.name)
   end
 
-  it 'should display the text if you dont plan on attending' do
+  it 'displays the text if you dont plan on attending' do
     rsvp_guest.update!(attending: false)
     render
     expect(rendered).to include('Thanks for taking the time to RSVP')

@@ -14,13 +14,15 @@ require 'rails_helper'
 # end
 RSpec.describe IconHelper, type: :helper do
   describe '#icon' do
-    context 'linkedin' do
+    context 'when linkedin' do
       subject { icon('linkedin') }
+
       it { is_expected.to eq '<i class="fa fa-linkedin"></i>' }
     end
 
-    context 'linkedin with size' do
+    context 'when linkedin with size' do
       subject { icon('linkedin', size: 'sm') }
+
       it { is_expected.to eq '<i class="fa fa-sm fa-linkedin"></i>' }
     end
   end

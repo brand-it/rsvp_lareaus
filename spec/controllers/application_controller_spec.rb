@@ -28,6 +28,7 @@ require 'rails_helper'
 RSpec.describe ApplicationController, type: :controller do
   describe 'GET #show' do
     subject { get :pages, params: { page_name: 'details' } }
+
     it { is_expected.to be_successful }
   end
 end

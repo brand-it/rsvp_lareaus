@@ -46,9 +46,11 @@ gem 'jquery-rails'
 gem 'react-rails'
 gem 'responders'
 gem 'sentry-raven'
+gem 'slack-ruby-client'
 gem 'slim'
 gem 'timber', '~> 2.3'
 gem 'webpacker'
+gem 'wisper', '2.0.0'
 
 group :development, :test do
   # Call 'byebug' anywheb in the code to stop execution and get a debugger console
@@ -58,12 +60,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec_junit_formatter' # for circleci
   gem 'rubocop', require: false
+  gem 'rubocop-rspec'
   gem 'scss_lint', require: false
 
   gem 'simplecov'
   gem 'slim-rails'
   gem 'solargraph'
 
+  gem 'annotate'
   gem 'debase'
   gem 'factory_bot_rails'
   gem 'faker'

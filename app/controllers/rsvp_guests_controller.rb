@@ -10,8 +10,12 @@ class RsvpGuestsController < ApplicationController
   end
 
   def create
-    @rsvp_guest = RsvpGuest.find_by(rsvp_guest_params)
-    @rsvp_guest ||= RsvpGuest.new(rsvp_guest_params)
+    @rsvp_guest = RsvpGuest.find_by(
+      first_name: rsvp_guest_params[:first_name], last_name: rsvp_guest_params[:last_name]
+    )
+    @rsvp_guest ||= RsvpGuest.new
+    @rsvp_guest.subscribe(SlackRsvpListener.new)
+    @rsvp_guest.assign_attributes(rsvp_guest_params)
     @rsvp_guest.save
 
     respond_with @rsvp_guest
