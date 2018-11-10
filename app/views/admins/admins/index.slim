@@ -1,0 +1,18 @@
+.table-responsive
+  table.table.table-dark.table-striped
+    thead
+      tr
+        th scope="col" ID
+        th scope='col' Email
+        th scope="col" Approved?
+        th scope="col" Created At
+        th scope="col" Updated At
+
+    tbody
+      - @admins.each do |admin|
+        tr
+          td= admin.id
+          td= admin.email
+          td= admin.approved? ? 'Yes' : 'No'
+          td= time_ago_in_words(admin.created_at)
+          td= time_ago_in_words(admin.updated_at)

@@ -72,6 +72,9 @@ RSpec.describe RsvpGuestsController, type: :controller do
   # end
 
   describe 'POST #create' do
+    include_context 'slack_messages'
+    before { stub_chat_postMessage }
+
     context 'with valid params' do
       subject(:post_create) { post :create, params: { rsvp_guest: valid_attributes } }
 

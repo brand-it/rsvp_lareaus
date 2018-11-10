@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: as_user=true&attachments=%5B%7B%22title%22%3A%22Sorry+this+is+a+test+to+make+sure+everything+is+working%22%2C%22color%22%3A%22%231edb7c%22%2C%22text%22%3A%22Is+this+working+I+Hope+so%22%2C%22ts%22%3A1541888622%2C%22footer%22%3A%22RSVP%22%7D%5D&channel=%23rsvp&token=xoxb-267765812004-476643944853-yjI4a0DKntB6xMjYmaVdm1Fr
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Slack Ruby Client/0.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '255'
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 10 Nov 2018 22:23:42 GMT
+      Server:
+      - Apache
+      X-Accepted-Oauth-Scopes:
+      - chat:write:user,client
+      X-Content-Type-Options:
+      - nosniff
+      X-Slack-Router:
+      - p
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Oauth-Scopes:
+      - identify,read,post,client,apps
+      Pragma:
+      - no-cache
+      X-Xss-Protection:
+      - '0'
+      X-Slack-Req-Id:
+      - 742245d8-de43-4b4e-aa25-a3a43f064654
+      X-Slack-Exp:
+      - '1'
+      X-Slack-Backend:
+      - h
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Via:
+      - haproxy-www-928b
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 55429f2d64d86ac51a104a1c84030e14.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - BHH3uxpjK8ch9f7leXAIzekgKyCmBkpPrmnLYIlQHbXI4csA0zVzcg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"channel":"CE1EJTCBZ","ts":"1541888622.001500","message":{"type":"message","user":"UE0JXTSR3","text":"","bot_id":"BE0JXTSHK","attachments":[{"text":"Is
+        this working I Hope so","title":"Sorry this is a test to make sure everything
+        is working","footer":"RSVP","id":1,"ts":1541888622,"color":"1edb7c","fallback":"Sorry
+        this is a test to make sure everything is working"}],"ts":"1541888622.001500"}}'
+    http_version: 
+  recorded_at: Sat, 10 Nov 2018 22:23:42 GMT
+recorded_with: VCR 4.0.0

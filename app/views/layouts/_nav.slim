@@ -4,12 +4,14 @@
       span.navbar-toggler-icon
     #navbarText.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
-        li.nav-item
+        li.nav-item.font-weight-bold class=("active" if current_page?(page_name: 'registries'))
           = link_to 'Registries', '/registries', class: 'nav-link'
-        li.nav-item
+        li.nav-item.font-weight-bold class=("active" if current_page?(page_name: 'details'))
           = link_to 'Wedding Info', '/details', class: 'nav-link'
         - if admin_signed_in?
-          li.nav-item
+          li.nav-item.font-weight-bold class=("active" if current_page?(admins_admins_path))
+            = link_to 'Admins', admins_admins_path, class: 'nav-link'
+          li.nav-item.font-weight-bold class=("active" if current_page?(admins_rsvp_guests_path))
             = link_to 'RSVP Guests', admins_rsvp_guests_path, class: 'nav-link'
       - if admin_signed_in?
         ul.nav

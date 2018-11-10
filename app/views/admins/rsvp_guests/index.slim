@@ -6,6 +6,8 @@
         th scope="col" Last Name
         th scope="col" Email
         th scope="col" Attending
+        th scope="col" Created At
+        th scope="col" Updated At
         th.text-right scope="col" Total Adults
         th.text-right scope="col" Total Children
 
@@ -16,12 +18,14 @@
           td= rsvp_guest.last_name
           td= rsvp_guest.email
           td= rsvp_guest.attending? ? 'Yes' : 'No'
+          td= time_ago_in_words(rsvp_guest.created_at)
+          td= time_ago_in_words(rsvp_guest.updated_at)
           td.text-right= rsvp_guest.total_adults
           td.text-right= rsvp_guest.total_children
           td.text-right= link_to icon('trash'), [:admins, rsvp_guest], class: 'text-white delete-button'
     tfooter
       tr
-        td colspan='4'
+        td colspan='6'
         td.text-right.total-adults-attending
           => @rsvp_guests.map(&:total_adults_attending).inject(:+).to_i
           | Attending
