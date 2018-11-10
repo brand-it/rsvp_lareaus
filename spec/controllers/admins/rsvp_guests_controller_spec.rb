@@ -18,17 +18,22 @@ RSpec.describe Admins::RsvpGuestsController, type: :controller do
   let(:valid_session) { {} }
   let(:rsvp_guest) { create :rsvp_guest }
   let(:admin) { create :admin }
+
   before { sign_in admin }
 
   describe 'GET #index' do
+    subject(:get_index) { get :index }
+
     before { rsvp_guest }
-    subject { get :index }
-    it { expect(subject.status).to eq 200 }
+
+    it { expect(get_index.status).to eq 200 }
   end
 
   describe 'DELETE #destroy' do
-    before { rsvp_guest }
     subject { delete :destroy, params: { id: rsvp_guest }, format: 'json' }
+
+    before { rsvp_guest }
+
     it { is_expected.to be_successful }
   end
 end
