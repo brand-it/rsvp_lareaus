@@ -6,7 +6,7 @@ document.addEventListener("turbolinks:load", function () {
         method: 'delete',
         url: this.href,
         dataType: 'json'
-      }).done((data, textStatus, jqXHR) => {
+      }).done((data) => {
 
         document.querySelectorAll('.total-adults-attending').forEach(function (total) {
           total.innerHTML = `${data['data']['total_adults_attending']} Attending`
