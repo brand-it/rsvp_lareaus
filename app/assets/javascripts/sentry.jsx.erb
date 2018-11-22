@@ -1,5 +1,5 @@
 Sentry.init({
   dsn: '<%= Rails.application.credentials.dig(:sentry, :dsn) %>',
   environment: '<%= Rails.env %>',
-  whitelistUrls: ['localhost', '127.0.0.1']
+  whitelistUrls: [/rsvp\.lareaus\.com/]
 });
