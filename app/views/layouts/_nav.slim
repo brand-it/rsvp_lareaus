@@ -1,11 +1,15 @@
   nav.navbar.navbar-expand-lg.navbar.navbar-dark.bg-dark
-    = link_to 'RSVP', root_path, class: 'navbar-brand'
+    = link_to root_path, class: 'navbar-brand' do
+      => icon 'user-plus', type: 'far'
+      | RSVP
     button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"]
       span.navbar-toggler-icon
     #navbarText.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
         li.nav-item.font-weight-bold class=("active" if current_page?(page_name: 'details'))
-          = link_to 'Wedding Info', '/details', class: 'nav-link'
+          = link_to details_path, class: 'nav-link' do
+            => icon 'info', type: 'far'
+            | Wedding Info
         - if admin_signed_in?
           li.nav-item.font-weight-bold class=("active" if current_page?(admins_admins_path))
             = link_to 'Admins', admins_admins_path, class: 'nav-link'

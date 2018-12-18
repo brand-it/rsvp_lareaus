@@ -1,7 +1,4 @@
 .container.pt-4
-  .row
-    .col-sm.large-font
-      = react_component 'CountDownClock', date: '2019-01-19T00:00:00'
 
   .row.text-center
     .col-sm.text-right.d-none.d-md-block= image_tag 'leaf-left.png'
@@ -9,6 +6,16 @@
       h1.chevalier= @rsvp_guest.name
       - if @rsvp_guest.attending
         h2 Looking forward to seeing you at the wedding
+        .large-font.text-center.chevalier 1 - 19 - 19
       - else
-        h2 Thanks for taking the time to RSVP
+        h2 Thanks for taking the time to RSVP and hope to see you some time soon
     .col-sm.text-left.d-none.d-md-block= image_tag 'leaf-right.png'
+  - if @rsvp_guest.attending
+    .row
+      .col-sm.large-font
+        = react_component 'CountDownClock', date: '2019-01-19T16:30:00'
+    .row.justify-content-lg-center
+      .col-md-4.pt-1
+        = link_to details_path, class: 'btn btn-dark large-font w-100' do
+          => icon 'info'
+          | More Information

@@ -4,9 +4,6 @@ import NumberElementFlipper from "./NumberElementFlipper";
 import CountDownNumberDivider from "./CountDownNumberDivider";
 
 class CountDownClock extends React.Component {
-  secondRemaining() {
-    return((Date.parse(new Date(endDate)) - Date.parse(new Date())) / 1000)
-  }
 
   flippers() {
     return (document.querySelectorAll('.flip-clock-wrapper .time-container'))
@@ -45,9 +42,6 @@ class CountDownClock extends React.Component {
 
   splitNumber(number) {
     let numbers = []
-    if (number === undefined) {
-      debugger
-    }
     let numberToString = number.toString();
     if (numberToString.length === 1) {
       numbers.push(0)
@@ -82,7 +76,7 @@ class CountDownClock extends React.Component {
               oldFlip = flip.children[0]
             }
             const newFlip = flip.children[numbers[index]];
-            if (!newFlip.classList.contains('flip-clock-active')) {
+            if (newFlip !== undefined && !newFlip.classList.contains('flip-clock-active')) {
               newFlip.classList.add('flip-clock-active')
               if (beforeFlip !== undefined) {
                 beforeFlip.classList.remove('flip-clock-before')
