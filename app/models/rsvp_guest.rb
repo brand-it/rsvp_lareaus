@@ -20,6 +20,7 @@ class RsvpGuest < ApplicationRecord
 
   after_commit :publish_rsvp_guest_created, on: :create
   after_commit :publish_rsvp_guest_updated, on: :update
+  before_update :publish_rsvp_guest_updating
   validates :first_name, presence: true
   validates :last_name, presence: true
   def name
@@ -46,5 +47,9 @@ class RsvpGuest < ApplicationRecord
 
   def publish_rsvp_guest_updated
     publish(:rsvp_guest_updated, self)
+  end
+
+  def publish_rsvp_guest_updating
+    publish(:rsvp_guest_updating, self)
   end
 end
