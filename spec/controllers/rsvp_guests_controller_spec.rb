@@ -95,34 +95,36 @@ RSpec.describe RsvpGuestsController, type: :controller do
     end
   end
 
-  # describe 'PUT #update' do
-  #   context 'with valid params' do
-  #     let(:new_attributes) do
-  #       skip('Add a hash of attributes valid for your model')
-  #     end
+  describe 'PUT #update' do
+    include_context 'slack_messages'
+    before { stub_chat_postMessage }
 
-  #     it 'updates the requested wedding' do
-  #       wedding = Wedding.create! valid_attributes
-  #       put :update, params: { id: wedding.to_param, wedding: new_attributes }, session: valid_session
-  #       wedding.reload
-  #       skip('Add assertions for updated state')
-  #     end
+    context 'with valid params' do
+      subject(:update_rsvp_guest) { put :update, params: { id: rsvp_guest.id, rsvp_guest: valid_attributes } }
 
-  #     it 'redirects to the wedding' do
-  #       wedding = Wedding.create! valid_attributes
-  #       put :update, params: { id: wedding.to_param, wedding: valid_attributes }, session: valid_session
-  #       expect(response).to redirect_to(wedding)
-  #     end
-  #   end
+      before { cookies[:rsvp_guest_id] = rsvp_guest.id }
 
-  #   context 'with invalid params' do
-  #     it "returns a success response (i.e. to display the 'edit' template)" do
-  #       wedding = Wedding.create! valid_attributes
-  #       put :update, params: { id: wedding.to_param, wedding: invalid_attributes }, session: valid_session
-  #       expect(response).to be_successful
-  #     end
-  #   end
-  # end
+      let(:new_attributes) do
+        { first_name: Faker::Name.first_name }
+      end
+
+      it { expect(update_rsvp_guest).to redirect_to(rsvp_guest) }
+    end
+
+    context 'when cookies where not set' do
+      subject(:update_rsvp_guest) { put :update, params: { id: rsvp_guest.id, rsvp_guest: valid_attributes } }
+
+      it { expect(update_rsvp_guest).to redirect_to %i[new rsvp_guest] }
+    end
+
+    context 'with invalid params' do
+      subject(:update_rsvp_guest) { put :update, params: { id: rsvp_guest.id, rsvp_guest: invalid_attributes } }
+
+      before { cookies[:rsvp_guest_id] = rsvp_guest.id }
+
+      it { expect(update_rsvp_guest.status).to eq 200 }
+    end
+  end
 
   # describe 'DELETE #destroy' do
   #   it 'destroys the requested wedding' do

@@ -3,6 +3,9 @@
     .container
       .row
         .col-sm.text-center
-          = link_to new_admin_session_path do
+          => link_to new_admin_session_path do
             => icon 'unlock-alt', type: 'fas'
             | Admin Login
+          =<> icon 'grip-lines-vertical', type: 'far'
+          | If you have any questions send us a email at
+          a< href="mailto: rsvp@laraus.com" rsvp@lareaus.com
