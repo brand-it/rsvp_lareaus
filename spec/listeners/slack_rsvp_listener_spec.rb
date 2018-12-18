@@ -15,8 +15,8 @@ RSpec.describe SlackRsvpListener do
     it { expect { rsvp_guest_created }.not_to raise_exception }
   end
 
-  describe '#rsvp_guest_updated' do
-    subject(:rsvp_guest_updated) { listener.rsvp_guest_updated(rsvp_guest) }
+  describe '#rsvp_guest_updating' do
+    subject(:rsvp_guest_updating) { listener.rsvp_guest_updating(rsvp_guest) }
 
     before do
       rsvp_guest.first_name = Faker::FunnyName.name
@@ -24,7 +24,7 @@ RSpec.describe SlackRsvpListener do
       stub_chat_postMessage
     end
 
-    it { expect { rsvp_guest_updated }.not_to raise_exception }
+    it { expect { rsvp_guest_updating }.not_to raise_exception }
   end
 
   describe '#slack_attachment_updated' do

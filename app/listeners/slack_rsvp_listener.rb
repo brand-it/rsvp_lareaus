@@ -5,7 +5,7 @@ class SlackRsvpListener
     SlackMessage.chat_postMessage(slack_attachment_new(rsvp_guest))
   end
 
-  def rsvp_guest_updated(rsvp_guest)
+  def rsvp_guest_updating(rsvp_guest)
     SlackMessage.chat_postMessage(slack_attachment_updated(rsvp_guest))
   end
 
