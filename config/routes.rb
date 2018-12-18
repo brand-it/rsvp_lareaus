@@ -14,5 +14,10 @@ Rails.application.routes.draw do
   end
 
   # Lowest of priority need to check this last
-  match '/:page_name' => 'application#pages', via: [:get]
+  # these are dynamic / static pages that we want to have simple displays.
+  # don't abuse this code as it is tempting to use this for all those one off pages
+  Dir[Rails.root.join('app/views/pages/*').to_s].map do |directory|
+    page_name = File.basename(directory).split('.').first
+    match page_name => 'application#pages', via: [:get], page_name: page_name
+  end
 end

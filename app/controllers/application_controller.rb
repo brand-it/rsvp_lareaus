@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   # this render dynamic / static data for
   def pages
     respond_to do |format|
-      format.html { render "pages/#{params[:page_name]}" }
+      format.html do
+        render "pages/#{params[:page_name]}"
+      end
     end
   end
 end
