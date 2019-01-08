@@ -7,7 +7,7 @@ class RsvpGuestsController < ApplicationController
   end
 
   def new
-    @rsvp_guest = RsvpGuest.find_by(id: cookies[:rsvp_guest_id])
+    @rsvp_guest = RsvpGuest.find_by(id: cookies[:rsvp_guest_id]) unless current_admin.present?
     @rsvp_guest ||= RsvpGuest.new # rubocop:disable Naming/MemoizedInstanceVariableName
   end
 
@@ -44,8 +44,6 @@ class RsvpGuestsController < ApplicationController
   end
 
   def find_rsvp_guest_by_name
-    return if current_admin.present?
-
     RsvpGuest.find_by(
       first_name: rsvp_guest_params[:first_name], last_name: rsvp_guest_params[:last_name]
     )
