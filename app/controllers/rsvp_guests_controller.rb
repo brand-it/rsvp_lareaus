@@ -44,6 +44,8 @@ class RsvpGuestsController < ApplicationController
   end
 
   def find_rsvp_guest_by_name
+    return if current_admin.present?
+
     RsvpGuest.find_by(
       first_name: rsvp_guest_params[:first_name], last_name: rsvp_guest_params[:last_name]
     )
