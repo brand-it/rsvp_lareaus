@@ -5,7 +5,7 @@
       .col-sm
         .minimal-input
           = minimal_form_errors(f.object, :first_name)
-          = f.text_field :first_name, required: true
+          = f.text_field :first_name, required: true, autofocus: true
           span.input-placeholder data-placeholder="FIRST NAME"
 
       .col-sm
