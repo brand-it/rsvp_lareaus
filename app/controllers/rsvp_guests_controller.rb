@@ -19,7 +19,17 @@ class RsvpGuestsController < ApplicationController
     @rsvp_guest.assign_attributes(rsvp_guest_params)
     @rsvp_guest.save
 
-    respond_with @rsvp_guest
+    respond_with @rsvp_guest do |format|
+      format.html do
+        if @rsvp_guest.invalid?
+          render :new
+        elsif current_admin.present?
+          redirect_to %i[new rsvp_guest], notice: @rsvp_guest.name
+        else
+          redirect_to @rsvp_guest
+        end
+      end
+    end
   end
 
   def update
