@@ -3,7 +3,7 @@
 module Admins
   class RsvpGuestsController < Admins::ApplicationController
     def index
-      @rsvp_guests = RsvpGuest.all
+      @rsvp_guests = RsvpGuest.all.order(updated_at: :desc)
     end
 
     def update; end
